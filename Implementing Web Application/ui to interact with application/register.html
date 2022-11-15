@@ -1,0 +1,38 @@
+<html>
+<title>sign in</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="/static/css/style1.css">
+<body>
+	<section class="login">
+		<div class="login_box">
+			<div class="left">
+				<div class="top_link"><a href="#"><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="">Return home</a></div>
+				<div class="contact">
+					<form action="/register" method="post" >
+						<div class="msg"><center>{{ error }}</center></div>
+						<h3>SIGN IN</h3>
+						<input type="text" name="username" placeholder="Enter Your Username" id="username"required>
+						<input type="text" name="password" placeholder="Enter Your Password" id="password"required>
+						<input type="text" name="address" placeholder="Enter Your address" id="address"required>
+						<input type="text" name="mobileNo" placeholder="Enter Your mobile number" id="mobileNO"required>
+						<input type="text" name="email" placeholder="Enter Your Email ID" id="email" required>
+						<button class="submit" id="button">register</button>
+						<div class="note mt-3 text-center">
+                <!--Register form -->
+                <p> already have an account ? please login <a href="/login">login! </a> </p>
+
+            </div>
+					</form>
+				</div>
+			</div>
+			<div class="right">
+				<div class="right-text">
+					<h2>smart fashion recommender</h2>
+					<h5>a modern fshion solution</h5>
+				</div>
+				<div class="right-inductor"><img src="" alt=""></div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
