@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>smart fashion recommender</title>
+<link rel="stylesheet" href={{ url_for('static', filename='css/home.css') }} />
+<link rel="stylesheet" href={{ url_for('static', filename='css/topStyle.css') }} />
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "c70ef7b0-391d-4712-b4c1-40bdafd3bab9", // The ID of this integration.
+    region: "au-syd", // The region your integration is hosted in.
+    serviceInstanceID: "c0fe8cfd-53ab-4906-b9da-116a1247d13f", // The ID of your service instance.
+    onLoad: function(instance) { instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+</head>
+<body>
+<div id="title">
+	<a href="/">
+		<img id="logo" src="https://menspants.s3.jp-tok.cloud-object-storage.appdomain.cloud/Photo_1668739605187.png" />
+	</a>
+	<form>
+		<h2 id="searchBox">Smart Fashion Recommender</h2>
+	</form>
+
+	{% if not loggedIn %}
+	<div id="signInButton">
+		<button type="button" onclick="location.href='/loginForm'">Sign In</a></button>
+	</div>
+	{% else %}
+	<div class="dropdown">
+		<button class="dropbtn">Hello, <br>{{username}}</button>
+		<div class="dropdown-content">
+			<a href="/logout">Sign Out</a>
+		</div>
+	</div>
+	{% endif %}
+	<div id="kart">
+		<a class="link" href="/cart">
+			<img src={{url_for('static', filename='images/shoppingCart.png')}} id="cartIcon" />
+			CART {{noOfItems}}
+		</a>
+	</div>
+</div>
+<div class="display">
+	<div class="displayCategory">
+		<h2>Shop by Category: </h2>
+
+			{% for row in categoryData %}
+			<a href="/displayCategory?categoryId={{row[0]}}">{{row[1]}}</a>
+			{% endfor %}
+	</div>
+	<div>	
+		<h2>Items</h2>
+		{% for data in itemData %}
+		<table>
+			<tr id="productName">
+				{% for row in data %}
+				<td>
+					{{row[1]}}
+				</td>
+				{% endfor %}
+			</tr>
+			<tr id="productImage">
+				{% for row in data %}
+				<td>
+					<a href="/productDescription?productId={{row[0]}}">
+						<img src='{{row[4]}}' id="itemImage" />
+					</a>
+				</td>
+				{% endfor %}
+			</tr>
+			<tr id="productPrice">
+				{% for row in data %}
+				<td>
+					₹{{row[2]}}
+				</td>
+				{% endfor %}
+			</tr>
+		</table>
+		{% endfor %}
+
+	</div>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,67 @@
+#itemImage {
+	height: 200px;
+	width: 150px;
+	border: 1px solid black;
+
+}
+
+.display {
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+  
+
+}
+.items{
+ border: 1px solid black;
+
+}
+button{
+ padding: 5px;
+ border: 0.5rem solid rebeccapurple; 
+ border-radius: 0.3rem;
+ font-size: 1.5rem;
+ background:rebeccapurple ;
+ color: white;
+}
+
+table {
+	border-spacing: 20px;
+}
+
+#productName {
+	text-align: center;
+	font-weight: bold;
+}
+
+#productPrice {
+	text-align: center;
+}
+.displayCategory a{
+	margin-right: 15px;
+}
+.displayCategory a {
+  flex: 1;
+  text-decoration: none;
+  outline: 5px;
+  text-align: center;
+  line-height: 3;
+  color: black;
+}
+
+.displayCategory a:link,
+.displayCategory a:visited,
+.displayCategory a:focus {
+  background: palegoldenrod;
+  color: black;
+}
+
+.displayCategory a:hover {
+  background: orange;
+}
+
+.displayCategory a:active {
+  background: darkred;
+  color: white;
+}
